@@ -15,7 +15,7 @@ interface ITimestamp {
   seconds: number;
   nanoseconds: number;
 }
-import ChatDP from "../../../images/zine2.png"
+import ChatDP from "../../../images/admin/logo.png"
 interface IMessageData {
   from: string;
   group: string;
@@ -265,17 +265,15 @@ const Channels = () => {
                   setReplyingName("")
                   setReplyingMessageID(null)
                 }}
-                  className={`w-11/12 flex font-extrabold text-sm rounded-2xl mb-1 py-2 pl-4 ${currRoom === "Announcements" ? "bg-white" : "bg-gray-200"}`}
+                  className={`flex gap-4 items-center font-bold text-sm rounded-2xl mb-1 py-2 px-4 ${currRoom === "Announcements" ? "bg-white" : "bg-gray-200"}`}
                   style={{ color: "#003d63", border: `${currRoom === "Announcements" ? "1px solid #003d63" : ""}`, cursor: 'pointer' }}
                 >
-                  <div className="w-6 h-6 mr-2" style={{ backgroundColor: "white", borderRadius: "50%" }}>
-                    <div className='h-full w-full flex flex-col justify-center'><Image layout="responsive" src={ChatDP} /></div>
-                  </div>
+                  <div className="w-7 h-7 mr-2" style={{ backgroundColor: "#fff", borderRadius: "50%" }}><Image src={ChatDP} width={35} height={35} /></div>
                   {"Announcements"}
                 </p>
 
 
-                <div className="font-normal ml-2 mt-5" style={{ color: "#8D989F" }}>Groups</div>
+                <div className="font-normal ml-2 mt-5 mb-2" style={{ color: "#8D989F" }}>Groups</div>
                 {
                   rooms.map((ele) => {
                     return (
@@ -290,17 +288,17 @@ const Channels = () => {
                         setReplyingName("")
                         setReplyingMessageID(null)
                       }}
-                        className={`w-11/12 flex font-extrabold rounded-2xl mb-1 py-2 pl-4 text-sm ${currRoom === ele[1].name ? "bg-white" : "bg-gray-200"}`}
+                        className={`flex items-center gap-4 font-bold rounded-2xl mb-1 py-2 px-4 text-sm ${currRoom === ele[1].name ? "bg-white" : "bg-gray-200"}`}
                         style={{ color: "#003d63", border: `${currRoom === ele[1].name ? "1px solid #003d63" : ""}`, cursor: 'pointer' }}
                       >
-                        <div className="w-6 h-6 mr-2" style={{ backgroundColor: "#fff", borderRadius: "50%" }}>
+                        <div className="w-7 h-7 mr-2" style={{ backgroundColor: "#fff", borderRadius: "50%" }}>
                           {
 
                             ele[1].image ?
                               <Image width={50} height={50} src={ele[1].image} />
                               :
-
-                              <div className='h-full w-full flex flex-col justify-center'><Image layout="responsive" src={ChatDP} /></div>
+                              <Image src={ChatDP} width={50} height={50} />
+                              // <div className='h-full w-full flex flex-col justify-center'><Image layout="responsive" src={ChatDP} /></div>
 
 
                           }
@@ -309,7 +307,7 @@ const Channels = () => {
                       </p>)
                   })
                 }
-                <div className="font-normal ml-2 mt-5" style={{ color: "#8D989F" }}>Rooms</div>
+                <div className="font-normal ml-2 mt-5 mb-2" style={{ color: "#8D989F" }}>Rooms</div>
                 {
                   rooms.map((ele) => {
                     return (
@@ -324,17 +322,18 @@ const Channels = () => {
                         setReplyingName("")
                         setReplyingMessageID(null)
                       }}
-                        className={`w-11/12 flex font-extrabold rounded-2xl mb-1 py-2 pl-4 text-sm ${currRoom === ele[1].name ? "bg-white" : "bg-gray-200"}`}
+                        className={`flex items-center gap-4 font-bold rounded-2xl mb-1 py-2 px-4 text-sm ${currRoom === ele[1].name ? "bg-white" : "bg-gray-200"}`}
                         style={{ color: "#003d63", border: `${currRoom === ele[1].name ? "1px solid #003d63" : ""}`, cursor: 'pointer' }}
                       >
 
-                        <div className="w-6 h-6 z-4 mr-2" style={{ backgroundColor: "white", borderRadius: "50%" }}>
+                        <div className="w-7 h-7 z-4 mr-2" style={{ backgroundColor: "white", borderRadius: "50%" }}>
                           {
 
                             ele[1].image ?
                               <div className='h-full w-full flex flex-col justify-center relative' style={{ overflow: "hidden", borderRadius: "50%" }}><Image layout="fill" objectFit="cover" width={50} height={50} src={ele[1].image} /></div>
                               :
-                              <div className='h-full w-full flex flex-col justify-center relative'><Image layout="responsive" objectFit="cover" src={ChatDP} /></div>
+                              <Image src={ChatDP} width={50} height={50} />
+                              // <div className='h-full w-full flex flex-col justify-center relative'><Image layout="responsive" objectFit="cover" src={ChatDP} /></div>
                           }
                         </div>
                         {ele[1].name}
@@ -356,17 +355,15 @@ const Channels = () => {
                   setReplyingMessageID(null)
                   setHide(true)
                 }}
-                  className={`flex font-extrabold text-3xl rounded-xl mb-1 py-2 pl-4 ${currRoom === "Announcements" ? "bg-white" : "bg-gray-200"}`}
+                  className={`flex items-center gap-4 font-bold text-xl rounded-xl mb-1 py-2 px-6 ${currRoom === "Announcements" ? "bg-white" : "bg-gray-200"}`}
                   style={{ color: "#003d63", border: `${currRoom === "Announcements" ? "1px solid #003d63" : ""}`, cursor: 'pointer' }}
                 >
-                  <div className="w-8 h-8 mr-2" style={{ backgroundColor: "#fff", borderRadius: "50%" }}>
-                    <div className='h-full w-full flex flex-col justify-center'><Image layout="responsive" src={ChatDP} /></div>
-                  </div>
+                  <div className="w-10 h-10 mr-2" style={{ backgroundColor: "#fff", borderRadius: "50%" }}><Image src={ChatDP} width={50} height={50} /></div>
                   Announcements
                 </p>
 
 
-                <div className="font-normal w-3/5" style={{ color: "#8D989F" }}>Groups</div>
+                <div className="font-normal w-3/5 my-2" style={{ color: "#8D989F" }}>Groups</div>
                 {
                   rooms.map((ele) => {
                     return (
@@ -382,23 +379,23 @@ const Channels = () => {
                         setReplyingName("")
                         setReplyingMessageID(null)
                       }}
-                        className={`flex font-extrabold rounded-xl text-3xl mb-1 py-2 pl-4 text-sm ${currRoom === ele[1].name ? "bg-white" : "bg-gray-200"}`}
+                        className={`flex items-center gap-4 font-bold rounded-xl text-xl mb-1 py-2 px-6 text-sm ${currRoom === ele[1].name ? "bg-white" : "bg-gray-200"}`}
                         style={{ color: "#003d63", border: `${currRoom === ele[1].name ? "1px solid #003d63" : ""}`, cursor: 'pointer' }}
                       >
-                        <div className="w-8 h-8 mr-2" style={{ backgroundColor: "#fff", borderRadius: "50%" }}>
+                        <div className="w-10 h-10 mr-2" style={{ backgroundColor: "#fff", borderRadius: "50%" }}>
                           {
 
                             ele[1].image ?
                               <div className='h-full w-full flex flex-col justify-center'><Image layout="responsive" src={ele[1].image} /></div>
                               :
-                              <div className='h-full w-full flex flex-col justify-center'><Image layout="responsive" src={ChatDP} /></div>
+                              <Image src={ChatDP} width={50} height={50} />
                           }
                         </div>
                         {ele[1].name}
                       </p>)
                   })
                 }
-                <div className="font-normal w-3/5" style={{ color: "#8D989F" }}>Rooms</div>
+                <div className="font-normal w-3/5 my-2" style={{ color: "#8D989F" }}>Rooms</div>
                 {
                   rooms.map((ele) => {
                     return (
@@ -414,17 +411,17 @@ const Channels = () => {
                         setReplyingName("")
                         setReplyingMessageID(null)
                       }}
-                        className={`flex font-extrabold rounded-2xl mb-1 py-2 pl-4 text-3xl ${currRoom === ele[1].name ? "bg-white" : "bg-gray-200"}`}
+                        className={`flex items-center gap-4 font-bold rounded-2xl mb-1 py-2 px-6 text-xl ${currRoom === ele[1].name ? "bg-white" : "bg-gray-200"}`}
                         style={{ color: "#003d63", border: `${currRoom === ele[1].name ? "1px solid #003d63" : ""}`, cursor: 'pointer' }}
                       >
 
-                        <div className="w-8 h-8 mr-2" style={{ backgroundColor: "transparent", borderRadius: "50%" }}>
+                        <div className="w-10 h-10 mr-2" style={{ backgroundColor: "transparent", borderRadius: "50%" }}>
                           {
 
                             ele[1].image ?
                               <div className='h-full w-full flex flex-col justify-center relative bg-white' style={{ overflow: "hidden", borderRadius: "50%" }}><Image layout="fill" objectFit='cover' width={30} height={30} src={ele[1].image} /></div>
                               :
-                              <div className='h-full w-full flex flex-col justify-center overflow-hidden'><Image layout="fill" objectFit='cover' height={30} width={30} src={ChatDP} /></div>
+                              <Image src={ChatDP} width={50} height={50} />
                           }
                         </div>
                         {ele[1].name}
@@ -438,8 +435,8 @@ const Channels = () => {
           {/* CHAT PART */}
           {screenWidth >= 768 ?
             <div className='flex-1 bg-gray-100 flex flex-col sm:w-full'>
-              {currRoomID && <div className="bg-white flex w-full py-3 my-auto">
-                <div className="w-8 h-8 mr-2 ml-6 py-auto object-fill rounded-xl my-auto"
+              {currRoomID && <div className="bg-white flex items-center w-full py-3 my-auto">
+                <div className="w-10 h-10 mr-2 ml-6 py-auto object-fill rounded-xl my-auto"
                 // style={{backgroundColor: "#0C72B0"}}
                 >
                   {
@@ -449,7 +446,7 @@ const Channels = () => {
                       </div>
 
                       :
-                      <div className='flex mt-2 justify-center align-center'><Image src={ChatDP}/></div>
+                      <Image src={ChatDP} width={50} height={50} />
                   }
                 </div>
                 <div className='font-bold h-fit text-xl' style={{ color: "#0C72B0" }}>{currRoom}</div>
@@ -475,7 +472,7 @@ const Channels = () => {
                         <div className={`flex ${reply && user ? "flex-col" : ""}`}>
                           {(whiteRect) && msg.data.from !== authUser?.name &&
                             <div className="w-6 h-6 bg-white mr-2 mt-auto rounded">
-                              <Image src={ChatDP} />
+                              <Image src={ChatDP} width={50} height={50} />
                             </div>
 
                           }
@@ -537,8 +534,8 @@ const Channels = () => {
             </div>
             :
             <div className={`bg-gray-100 w-screen flex flex-col h-dvh`}>
-              <div className="bg-white flex fixed w-full top-12 z-30 align-center py-5 my-auto">
-                <div className="w-8 h-8 mr-2 ml-6 my-auto object-fill rounded-xl align pt-2 py"
+              <div className="bg-white flex items-center fixed w-full top-12 z-30 py-5 my-auto">
+                <div className="w-8 h-8 mr-2 ml-6 my-auto object-fill rounded-xl align"
                 // style={{backgroundColor: "#0C72B0"}}
                 >
                   {
@@ -546,7 +543,7 @@ const Channels = () => {
 
                       <Image height={50} width={50} src={currRoomImage} />
                       :
-                      <Image src={ChatDP} />
+                      <Image src={ChatDP} width={50} height={50} />
                   }
                 </div>
                 <div className='font-bold text-xl' style={{ color: "#0C72B0" }}>{currRoom}</div>
